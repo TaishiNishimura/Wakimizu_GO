@@ -1,0 +1,5 @@
+# macOS関連
+.DS_Store
+
+# コンフィグ関連
+config_*.json
