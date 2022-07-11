@@ -1,11 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
 
+/* 1stセクション */
+.first_section {
+  height: 100vh;
+  position:relative;
+}
+.color_bar {
+  height: 50vh;
+  top: 50%;
+  background-color: #CBF7FF;
+  position:relative;
+}
+
 .selectbox {
-  width:40%;
-  margin:1em auto;
-position:relative;
+width:40%;
+top: 20%;
+left: 50%;
+position:absolute;
 }
 select{
 -webkit-appearance:none;
@@ -30,4 +49,35 @@ top:35%;
 border-bottom:#333 2px solid;
 border-right:#333 2px solid;
 transform:rotate(45deg)translateY(-30%);
+}
+
+/* 2ndセクション */
+.second_section {
+  height: 100vh;
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.namezone {
+  width: 70%;
+  height: 70%;
+  overflow: scroll;
+  background-color: fuchsia;
+  position:absolute;
+}
+
+#namebox {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+#nameEle {
+  margin: 10%;
 }

@@ -8,8 +8,8 @@ async function handleChange(event) {
   if (prefecture != null) {
     console.log('OK')
     const getname = new GetName();
-    let nameList = await getname.getName(prefecture);
-    console.log(nameList);
+    let nameLists = await getname.getName(prefecture);
+    getname.createNameElement(nameLists);
   } else {
     console.log('NG')
   }

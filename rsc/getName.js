@@ -10,18 +10,28 @@ export class GetName extends CommonFunctions {
 
   //////// Methods ////////
 
-  // レスポンスオブジェクトから湧水名を返す
+  // レスポンスオブジェクトから湧水名一覧を返す
   async getName(prefecture) {
     const lists = await this.callApi(prefecture);
     for (let list in lists.result) {
-      let data = lists["result"][list]["name"];
+      let name = lists["result"][list]["name"];
       // nullの場合、名前を付与
-      if (data === null) {
-        data = "名無の沢"
+      if (name === null) {
+        name = "名無の湧水"
       }
-      this.nameList.push(data);
+      this.nameList.push(name);
     }
     return this.nameList;
+  }
+
+  async createNameElement(nameLists) {
+    for (let i = 0; i < nameLists.length; i++ ) {
+      const nameElement = document.createElement('div');
+      // idを付与
+      nameElement.id = 'nameEle';
+      nameElement.innerHTML = nameLists[i];
+      document.getElementById('namebox').appendChild(nameElement);
+    }
   }
 
 }
