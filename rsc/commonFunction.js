@@ -11,8 +11,8 @@ export class CommonFunctions extends CommonSettings {
   // APIコール
   async callApi(prefecture) {
     const res = await fetch(this.WAKIMIZUAPIURL + prefecture);
-      const wakimizuData = await res.json();
-      return wakimizuData;
+      let wakimizuObj = await res.json();
+      return wakimizuObj;
   }
 
 }
