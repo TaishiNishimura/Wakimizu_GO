@@ -60,11 +60,15 @@ transform:rotate(45deg)translateY(-30%);
   align-items: center;
 }
 
+.water_image {
+  height: 90%;
+  border-radius: 15%;
+}
+
 .namezone {
-  width: 70%;
-  height: 70%;
+  width: 60%;
+  height: 80%;
   overflow: scroll;
-  background-color: fuchsia;
   position:absolute;
 }
 
@@ -75,9 +79,13 @@ transform:rotate(45deg)translateY(-30%);
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-
+  position:absolute;
 }
 
-#nameEle {
-  margin: 10%;
+.nameEle {
+  margin: 3%;
+  padding: 7%;
+  background-color: #fff;
+  opacity: 80%;
+  cursor: pointer;
 }
