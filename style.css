@@ -65,14 +65,14 @@ transform:rotate(45deg)translateY(-30%);
   border-radius: 15%;
 }
 
-.namezone {
+.name_zone {
   width: 60%;
   height: 80%;
   overflow: scroll;
   position:absolute;
 }
 
-#namebox {
+#name_box {
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: space-around;
@@ -88,4 +88,34 @@ transform:rotate(45deg)translateY(-30%);
   background-color: #fff;
   opacity: 80%;
   cursor: pointer;
+}
+
+/* 3rdセクション */
+.third_section {
+  height: 100vh;
+  position:relative;
+}
+
+.data_area {
+  width: 25%;
+  height: 100%;
+  left: 0%;
+  background-color: #CBF7FF;
+  position: absolute;
+}
+
+.map_area {
+  width: 75%;
+  height: 100%;
+  left: 25%;
+  background-color: #F1FBFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+#map {
+  height: 70%;
+  width: 70%;
 }

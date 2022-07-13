@@ -1,9 +1,11 @@
 import { GetNameList } from './getNameList.js';
 import { GetData } from './getData.js';
+import { GetMap } from './getMap.js';
 
 // インスタンス化
 const getNL = new GetNameList();
 const getD = new GetData();
+const getM = new GetMap();
 
 let nameEle = document.getElementsByClassName('nameEle');
 
@@ -22,10 +24,16 @@ async function handleChange(event) {
   // クリックされた湧水のid（番号）を取得
   for (let i = 0; i < nameEle.length; i++) {
     nameEle[i].addEventListener('click', function() {
-      let selectNumber = this.id;
-      // 選択された湧水のid（番号）の情報を表示
-      console.log(lists)
-      console.log(selectNumber)
+      // id（番号）を取得
+      let selectNum = this.id;
+      // 選択された湧水のid（番号）の情報を取得
+      getD.getData(lists, selectNum);
+      // 情報を表示
+      getD.createData();
+      // 選択された湧水のid（番号）のpos情報を取得
+      getM.getPosData(lists, selectNum);
+      // マップを描画
+      getM.createMap();
     });
   };
 }
