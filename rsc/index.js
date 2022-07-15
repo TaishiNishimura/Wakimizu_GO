@@ -1,6 +1,7 @@
 import { GetNameList } from './getNameList.js';
 import { GetData } from './getData.js';
 import { GetMap } from './getMap.js';
+import { scroll } from './style.js';
 
 // インスタンス化
 const getNL = new GetNameList();
@@ -10,11 +11,13 @@ const getM = new GetMap();
 let nameEle = document.getElementsByClassName('nameEle');
 
 // 都道府県セレクトメニューから情報を取得し、メイン処理開始
-const element = document.querySelector('#address');
+const element = document.querySelector('#prefecture');
 element.addEventListener('change', handleChange)
 async function handleChange(event) {
+  // #second_sectionに自動スクロール
+  scroll("second_section");
   // 都道府県名を取得
-  const prefecture = element.value;
+  let prefecture = element.value;
   // Apiコール
   let lists = await getNL.callApi(prefecture);
   // 湧水名リストを取得
@@ -24,6 +27,7 @@ async function handleChange(event) {
   // クリックされた湧水のid（番号）を取得
   for (let i = 0; i < nameEle.length; i++) {
     nameEle[i].addEventListener('click', function() {
+      scroll("third_section");
       // id（番号）を取得
       let selectNum = this.id;
       // 選択された湧水のid（番号）の情報を取得

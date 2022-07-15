@@ -7,10 +7,9 @@ export class GetNameList extends CommonFunctions {
     //////// let ////////
     this.nameList = [];
     this.noname = "名無の湧水";
-    this.divClass = 'div';
     this.nameEle = 'nameEle';
     this.radiusValue = "border-radius: " + this.getRandom() + "% " + this.getRandom() + "% " + this.getRandom() + "% " + this.getRandom() + "%";
-    this.nameIdName = 'name_box';
+    this.nameIdName = 'name_list';
   }
 
   //////// Methods ////////
@@ -31,7 +30,7 @@ export class GetNameList extends CommonFunctions {
   // 湧水名一覧から個々のエレメントを作成
   async createNameElement(nameLists) {
     for (let i = 0; i < nameLists.length; i++ ) {
-      const nameElement = document.createElement(this.divClass);
+      const nameElement = document.createElement(this.PEle);
       // 一意のidを付与
       nameElement.id = i;
       nameElement.className = this.nameEle;
