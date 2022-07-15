@@ -16,7 +16,7 @@ export class GetMap extends CommonFunctions {
     // 地図のズーム度
     this.zoomNum = 10;
     // ポップアップの説明
-    this.popupNote = 'アクセス制限: ';
+    this.popupNote = 'アクセス制限 : ';
   }
 
   //////// Methods ////////

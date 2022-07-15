@@ -23,7 +23,13 @@ export class CommonFunctions extends CommonSettings {
   getRandom() {
     let random = Math.floor(
       Math.random() * (this.MaxNumber + this.CalculationNumber - this.MinNumber)
-    ) + this.MinNumber ;
+    ) + this.MinNumber;
     return random;
+  }
+
+  // 半角スペースを改行タグに置換
+  getBr(str) {
+    let strBr = str.replace(/\s/g,'</br>');
+    return strBr
   }
 }
