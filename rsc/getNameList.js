@@ -5,7 +5,6 @@ export class GetNameList extends CommonFunctions {
   constructor() {
     super();
     //////// let ////////
-    this.nameList = [];
     this.noname = "名無の湧水";
     this.nameEle = 'nameEle';
     this.radiusValue = "border-radius: " + this.getRandom() + "% " + this.getRandom() + "% " + this.getRandom() + "% " + this.getRandom() + "%";
@@ -16,15 +15,17 @@ export class GetNameList extends CommonFunctions {
 
   // レスポンスオブジェクトから湧水名一覧を返す
   async getName(lists) {
+    const nameList =[];
+    console.log(nameList)
     for (let list in lists.result) {
       let name = lists["result"][list]["name"];
       // nullの場合、名前を付与
       if (name === null) {
         name = this.noname
       }
-      this.nameList.push(name);
+      nameList.push(name);
     }
-    return this.nameList;
+    return nameList;
   }
 
   // 湧水名一覧から個々のエレメントを作成
