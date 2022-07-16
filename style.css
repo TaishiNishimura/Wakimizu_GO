@@ -140,7 +140,7 @@ select{
   position:absolute;
   bottom:1%;
   right:50%;
-    /*矢印の動き1秒かけて永遠にループ*/
+  /*矢印の動き1秒かけて永遠にループ*/
   animation: arrowmove 1s ease-in-out infinite;
 }
 
@@ -300,6 +300,15 @@ select{
   height: 15%;
   left: 25%;
   top: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #F1FBFF;
   position: absolute;
+}
+
+.arrow_up {
+  height: 50%;
+  opacity: 1;
+  cursor: pointer;
 }
