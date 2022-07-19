@@ -13,6 +13,7 @@ export class GetMap extends CommonFunctions {
     this.ng = '立入NG';
     this.unknown = '不明';
     this.mapIdName = 'map';
+    this.mapAreaIdName = 'map_area';
     // 地図のズーム度
     this.zoomNum = 10;
     // ポップアップの説明
@@ -44,17 +45,28 @@ export class GetMap extends CommonFunctions {
     this.targetAccess = lists['result'][selectNum]['access'];
   }
 
+  // マップの描画エリアを作成
+  createMapContainer() {
+    let mapContainer = document.createElement(this.divEle);
+    mapContainer.id = this.mapIdName;
+    document.getElementById(this.mapAreaIdName).appendChild(mapContainer);
+  }
+
   //マップを描画する
   createMap() {
+    // マップ作成の前に、もし前回生成した要素があれば削除（初期化)
+    this.removeElement(this.mapAreaIdName)
+    // マップの描画エリアを作成
+    this.createMapContainer();
     // アクセス記号を日本語に変換
     let access = this.changeAccess(this.targetAccess);
     // 緯度経度を中心に地図描画
-    var map = L.map(this.mapIdName, {
+    let map = L.map(this.mapIdName, {
       center: [this.targetLat, this.targetLng],
       zoom: this.zoomNum,
     });
     // OpenStreetMapから地図画像を読み込む
-    var tileLayer = L.tileLayer(this.OpenStreetMapUrl, {
+    let tileLayer = L.tileLayer(this.OpenStreetMapUrl, {
       attribution: this.Attribution,
     });
     tileLayer.addTo(map);
