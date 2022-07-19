@@ -2,88 +2,166 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
+    <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- Module -->
     <script type="module" src="rsc/index.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
+    <!-- leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""/>
+    <!-- leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""></script>
   </head>
 
   <body>
-    <section class="first_section">
-      <div class="color_bar">
-        <div class="selectbox">
-          <select name="address" id="address">
-            <option value="" selected="selected">Select a prefecture</option>
-            <optgroup label="北海道・東北地方">
-              <option value="北海道">北海道</option>
-              <option value="青森県">青森県</option>
-              <option value="岩手県">岩手県</option>
-              <option value="宮城県">宮城県</option>
-              <option value="秋田県">秋田県</option>
-              <option value="山形県">山形県</option>
-              <option value="福島県">福島県</option>
-            </optgroup>
-            <optgroup label="関東地方">
-              <option value="茨城県">茨城県</option>
-              <option value="栃木県">栃木県</option>
-              <option value="群馬県">群馬県</option>
-              <option value="埼玉県">埼玉県</option>
-              <option value="千葉県">千葉県</option>
-              <option value="東京都">東京都</option>
-              <option value="神奈川県">神奈川県</option>
-            </optgroup>
-            <optgroup label="中部地方">
-              <option value="山梨県">山梨県</option>
-              <option value="長野県">長野県</option>
-              <option value="新潟県">新潟県</option>
-              <option value="富山県">富山県</option>
-              <option value="石川県">石川県</option>
-              <option value="福井県">福井県</option>
-              <option value="静岡県">静岡県</option>
-              <option value="愛知県">愛知県</option>
-              <option value="岐阜県">岐阜県</option>
-            </optgroup>
-            <optgroup label="近畿地方">
-              <option value="三重県">三重県</option>
-              <option value="滋賀県">滋賀県</option>
-              <option value="京都府">京都府</option>
-              <option value="大阪府">大阪府</option>
-              <option value="兵庫県">兵庫県</option>
-              <option value="奈良県">奈良県</option>
-              <option value="和歌山県">和歌山県</option>
-            </optgroup>
-            <optgroup label="中国・四国地方">
-              <option value="鳥取県">鳥取県</option>
-              <option value="島根県">島根県</option>
-              <option value="岡山県">岡山県</option>
-              <option value="広島県">広島県</option>
-              <option value="山口県">山口県</option>
-              <option value="香川県">香川県</option>
-              <option value="愛媛県">愛媛県</option>
-              <option value="徳島県">徳島県</option>
-              <option value="高知県">高知県</option>
-            </optgroup>
-            <optgroup label="九州・沖縄地方">
-              <option value="福岡県">福岡県</option>
-              <option value="佐賀県">佐賀県</option>
-              <option value="長崎県">長崎県</option>
-              <option value="熊本県">熊本県</option>
-              <option value="大分県">大分県</option>
-              <option value="宮崎県">宮崎県</option>
-              <option value="鹿児島県">鹿児島県</option>
-              <option value="沖縄県">沖縄県</option>
-            </optgroup>
-          </select>
+    <section id="first_section">
+
+      <img src="/water_image.jpg" alt="" class="water_image" loading="lazy"/>
+
+      <div class="top_bar">
+        <div class="logo_area">
+          <!-- ロゴ -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="143.318" height="137.5" viewBox="0 0 143.318 137.5">
+            <g transform="translate(-61 -46.5)">
+              <text class="logo_a" transform="translate(61 175)">
+                <tspan x="0" y="0">湧水</tspan><tspan class="logo_b" y="0">GO</tspan>
+              </text>
+              <path class="logo_c" d="M163.5,0c11.923,0,11.923,11.464,23.846,11.464S199.269,0,211.192,0s11.923,11.464,23.846,11.464S246.96,0,258.883,0s11.923,11.464,23.846,11.464S294.652,0,306.575,0" transform="translate(-102.257 110.067)"/>
+              <path class="logo_c" d="M163.5,0c11.923,0,11.923,11.464,23.846,11.464S199.269,0,211.192,0s11.923,11.464,23.846,11.464S246.96,0,258.883,0s11.923,11.464,23.846,11.464S294.652,0,306.575,0" transform="translate(-102.257 78.295)"/>
+              <path class="logo_c" d="M163.5,0c11.923,0,11.923,11.464,23.846,11.464S199.269,0,211.192,0s11.923,11.464,23.846,11.464S246.96,0,258.883,0s11.923,11.464,23.846,11.464S294.652,0,306.575,0" transform="translate(-102.257 48)"/>
+            </g>
+          </svg>
         </div>
+
+        <div class="text_area">
+          <p>
+            Pure Water, Clear Water<br>
+            湧水は人々にとってうるおいとやすらぎの場を提供しています。<br>
+            以下から都道府県を選んで、とっておきの湧水と出会ってください。
+          </p>
+        </div>
+      </div>
+
+      <div class="selectbox">
+        <select name="prefecture" id="prefecture">
+          <option value="" selected="selected">Select a prefecture</option>
+          <optgroup label="北海道・東北地方">
+            <option value="北海道">北海道</option>
+            <option value="青森県">青森県</option>
+            <option value="岩手県">岩手県</option>
+            <option value="宮城県">宮城県</option>
+            <option value="秋田県">秋田県</option>
+            <option value="山形県">山形県</option>
+            <option value="福島県">福島県</option>
+          </optgroup>
+          <optgroup label="関東地方">
+            <option value="茨城県">茨城県</option>
+            <option value="栃木県">栃木県</option>
+            <option value="群馬県">群馬県</option>
+            <option value="埼玉県">埼玉県</option>
+            <option value="千葉県">千葉県</option>
+            <option value="東京都">東京都</option>
+            <option value="神奈川県">神奈川県</option>
+          </optgroup>
+          <optgroup label="中部地方">
+            <option value="山梨県">山梨県</option>
+            <option value="長野県">長野県</option>
+            <option value="新潟県">新潟県</option>
+            <option value="富山県">富山県</option>
+            <option value="石川県">石川県</option>
+            <option value="福井県">福井県</option>
+            <option value="静岡県">静岡県</option>
+            <option value="愛知県">愛知県</option>
+            <option value="岐阜県">岐阜県</option>
+          </optgroup>
+          <optgroup label="近畿地方">
+            <option value="三重県">三重県</option>
+            <option value="滋賀県">滋賀県</option>
+            <option value="京都府">京都府</option>
+            <option value="大阪府">大阪府</option>
+            <option value="兵庫県">兵庫県</option>
+            <option value="奈良県">奈良県</option>
+            <option value="和歌山県">和歌山県</option>
+          </optgroup>
+          <optgroup label="中国・四国地方">
+            <option value="鳥取県">鳥取県</option>
+            <option value="島根県">島根県</option>
+            <option value="岡山県">岡山県</option>
+            <option value="広島県">広島県</option>
+            <option value="山口県">山口県</option>
+            <option value="香川県">香川県</option>
+            <option value="愛媛県">愛媛県</option>
+            <option value="徳島県">徳島県</option>
+            <option value="高知県">高知県</option>
+          </optgroup>
+          <optgroup label="九州・沖縄地方">
+            <option value="福岡県">福岡県</option>
+            <option value="佐賀県">佐賀県</option>
+            <option value="長崎県">長崎県</option>
+            <option value="熊本県">熊本県</option>
+            <option value="大分県">大分県</option>
+            <option value="宮崎県">宮崎県</option>
+            <option value="鹿児島県">鹿児島県</option>
+            <option value="沖縄県">沖縄県</option>
+          </optgroup>
+        </select>
       </div>
     </section>
 
-    <section class="second_section">
-      <div class="namezone">
-        <div id="namebox">
+    <section id="second_section">
+      <div class="lucky_area"><p>lucky wakky</p></div>
+      <div class="namelist_area">
+        <div class="name_zone">
+          <div id="name_list"></div>
         </div>
+        <div class="scroll_zone">
+          <div class="scrolldown">
+            <span>Scroll</span>
+          </div>
+        </div>
+      </div>
+      <div class="wave_area">
+        <!-- 波SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="76.531" height="143.075" viewBox="0 0 76.531 143.075"><g transform="translate(75.031) rotate(90)"><path d="M0,11.464C11.923,11.464,11.923,0,23.846,0S35.769,11.464,47.691,11.464,59.614,0,71.537,0,83.46,11.464,95.383,11.464,107.306,0,119.229,0s11.923,11.464,23.846,11.464" transform="translate(0 0)" fill="none" stroke="#374955" stroke-width="2"/><path d="M0,11.464C11.923,11.464,11.923,0,23.846,0S35.769,11.464,47.691,11.464,59.614,0,71.537,0,83.46,11.464,95.383,11.464,107.306,0,119.229,0s11.923,11.464,23.846,11.464" transform="translate(0 31.773)" fill="none" stroke="#374955" stroke-width="2"/><path d="M0,11.464C11.923,11.464,11.923,0,23.846,0S35.769,11.464,47.691,11.464,59.614,0,71.537,0,83.46,11.464,95.383,11.464,107.306,0,119.229,0s11.923,11.464,23.846,11.464" transform="translate(0 62.067)" fill="none" stroke="#374955" stroke-width="2"/></g></svg>
       </div>
     </section>
 
-    <script src="/rsc/style.js"></script>
+    <section id="third_section">
+      <div class="data_area">
+        <div class="scroll">
+          <div id="furigana"></div>
+          <div id="name"></div>
+          <div id="gaiyou"></div>
+          <div id="overview"></div>
+          <div id="hozen"></div>
+          <div id="activity"></div>
+        </div>
+      </div>
+      <div class="head_area">
+        <div id="address"></div>
+        <!-- 矢印アイコン -->
+        <svg version="1.1" id="arrow_up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve" class="arrow_up">
+          <style type="text/css">
+            .st0{fill:#4B4B4B;}
+          </style>
+          <g>
+            <path class="st0" d="M473.236,283.232L276.228,10.34C271.535,3.855,264.009,0,255.996,0c-8.013,0-15.539,3.855-20.222,10.34
+              l-197,272.901c-4.975,7.692-4.78,17.622,0.497,25.1c5.277,7.478,14.546,11.022,23.464,8.938l96.465-22.53v184.81
+              c-0.01,17.896,14.517,32.422,32.43,32.422l128.74,0.02c17.924-0.02,32.44-14.546,32.44-32.45V294.73l96.455,22.548
+              c8.909,2.084,18.197-1.451,23.465-8.938C477.998,300.853,478.202,290.922,473.236,283.232z" style="fill: #B2D2DD;"></path>
+          </g>
+        </svg>
+      </div>
+      <div id="map_area"></div>
+      <div class="footer_area"></div>
+    </section>
 
   </body>
 </html>

@@ -1,5 +1,53 @@
-# macOS関連
-.DS_Store
-
 # コンフィグ関連
 config_*.json
+
+# Common
+node_modules
+build
+dist
+.sass-cache
+*.swp
+*.db
+._*
+
+# Mac
+.Spotlight-V100
+.DS_Store
+.Trashes
+
+# Design
+*.psd
+*.ai
+*.sketch
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# VS Code Local History
+.history
+
+# Firebase
+firebase-debug.log*
+.firebase
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
