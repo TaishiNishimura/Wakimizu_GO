@@ -32,4 +32,14 @@ export class CommonFunctions extends CommonSettings {
     let strBr = str.replace(/\s/g,'</br>');
     return strBr
   }
+
+  // 前回生成した要素を削除（初期化)
+  removeElement(idName) {
+    let elem = document.getElementById(idName);
+    if (elem.hasChildNodes()) {
+      while(elem.firstChild){
+        elem.removeChild(elem.firstChild);
+      }
+    }
+  }
 }

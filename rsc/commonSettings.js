@@ -8,5 +8,6 @@ export class CommonSettings {
     this.PEle = 'p';
     this.PTag_s = '<p>';
     this.PTag_e = '</p>';
+    this.divEle = 'div';
   }
 }
