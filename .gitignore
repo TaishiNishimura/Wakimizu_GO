@@ -1,5 +1,6 @@
 # コンフィグ関連
 config_*.json
+.vscode
 
 # Common
 node_modules
