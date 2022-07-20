@@ -1,4 +1,4 @@
-import { CommonFunctions } from './commonFunction.js';
+import { CommonFunctions } from './commonFunctions.js';
 
 export class GetData extends CommonFunctions {
   //クラス
@@ -14,6 +14,7 @@ export class GetData extends CommonFunctions {
     this.hozenText = '環境保全活動';
     this.hozenId = 'hozen';
     this.activityId = 'activity';
+    this.nameTitle = '名前';
   }
 
   //////// Methods ////////
@@ -24,6 +25,10 @@ export class GetData extends CommonFunctions {
     this.targetAddress = lists['result'][selectNum]['address'];
     // ふりがなを抽出
     let furiganaStr = lists['result'][selectNum]['furigana'];
+    // ふりがながnullだったらstrを代入
+    if (!furiganaStr) {
+      furiganaStr = this.nameTitle;
+    }
     // ふりがなの半角スペースを改行タグに置換
     this.targetFurigana = this.getBr(furiganaStr);
     // 名前を抽出

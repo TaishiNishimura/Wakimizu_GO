@@ -1,4 +1,4 @@
-import { CommonFunctions } from './commonFunction.js';
+import { CommonFunctions } from './commonFunctions.js';
 
 export class GetMap extends CommonFunctions {
   //マップを描画するクラス

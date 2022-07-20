@@ -2,6 +2,7 @@ import { GetNameList } from './getNameList.js';
 import { GetData } from './getData.js';
 import { GetMap } from './getMap.js';
 import { Style } from './style.js';
+import "./style.scss";
 
 // インスタンス化
 const getNL = new GetNameList();
