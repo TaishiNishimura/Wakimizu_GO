@@ -1,4 +1,4 @@
-import { CommonFunctions } from './commonFunction.js';
+import { CommonFunctions } from './commonFunctions.js';
 
 export class GetNameList extends CommonFunctions {
   //湧水名一覧を取得するクラス
