@@ -1,7 +1,7 @@
-import { GetNameList } from './getNameList.js';
-import { GetData } from './getData.js';
-import { GetMap } from './getMap.js';
-import { Style } from './style.js';
+import { GetNameList } from './modules/getNameList.js';
+import { GetData } from './modules/getData.js';
+import { GetMap } from './modules/getMap.js';
+import { Style } from './modules/style.js';
 import "./style.scss";
 
 // インスタンス化
