@@ -1,7 +1,7 @@
 import { CommonFunctions } from './commonFunctions.js';
 
 export class GetData extends CommonFunctions {
-  //クラス
+  //湧水情報を抽出し、表示するクラス
   constructor() {
     super();
     //////// let ////////
@@ -36,7 +36,7 @@ export class GetData extends CommonFunctions {
     // 名前の半角スペースを改行タグに置換
     this.targetName = this.getBr(nameStr);
     // 概要を抽出
-    this.targetOverview= lists['result'][selectNum]['overview'];
+    this.targetOverview = lists['result'][selectNum]['overview'];
     // 環境保全活動を抽出
     this.targetActivity = lists['result'][selectNum]['activity'];
   }
