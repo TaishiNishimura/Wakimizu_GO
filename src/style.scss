@@ -1,0 +1,486 @@
+@charset "utf-8";
+
+$font: 'Zen Maru Gothic', sans-serif;
+$text-color: #374955;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font;
+}
+
+p,
+select,
+span,
+tspan {
+  color: $text-color;
+}
+
+
+/* ローディング画面 */
+#loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  z-index: 9999;
+
+  .spinner {
+    /*波紋の基点とするためrelativeを指定*/
+    position: relative;
+    top: 40%;
+    left: 45%;
+
+    /*波形の設定*/
+    &:before {
+      content: '';
+      /*絶対配置で波形の位置を決める*/
+      position: absolute;
+      /*波形の形状*/
+      border: 2px solid $text-color;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      /*はじめは不透明*/
+      opacity: 1;
+      /*アニメーションの設定*/
+      animation: 1s circleanime forwards;
+    }
+
+    /*波形が広がるアニメーション*/
+    @keyframes circleanime {
+      0% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.loaded {
+  opacity: 1;
+  animation: 1s circleanime2 forwards;
+}
+
+@keyframes circleanime2 {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+/* 1stセクション */
+#first_section {
+  height: 100vh;
+  position: relative;
+
+  .top_bar {
+    width: 100%;
+    height: 50vh;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
+    position: absolute;
+
+    .logo_area {
+      top: 10%;
+      left: 3%;
+      position: absolute;
+
+      .logo_a {
+        fill: $text-color;
+        font-size: 40px;
+        font-family: $font;
+      }
+
+      .logo_b {
+        fill: $text-color;
+        font-size: 40px;
+        font-family: $font;
+      }
+
+      .logo_c {
+        fill: none;
+        stroke: $text-color;
+        stroke-width: 2px;
+      }
+    }
+  }
+
+  .text_area {
+    top: 60%;
+    left: 15%;
+    position: absolute;
+  }
+
+  .bottom_bar {
+    width: 100%;
+    height: 50vh;
+    top: 50%;
+    background: url("waterImage.jpg");
+    position: absolute;
+
+    .selectbox {
+      width: 35%;
+      top: 10%;
+      left: 55%;
+      z-index: 1;
+      position: absolute;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        right: 5%;
+        top: 35%;
+        border-bottom: #333 2px solid;
+        border-right: #333 2px solid;
+        transform: rotate(45deg)translateY(-30%);
+      }
+
+      select {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        padding: 1em 1em;
+        box-sizing: border-box;
+        font-size: 22px;
+        font-weight: 300;
+        border: #ccc 1px solid;
+        border-radius: 40px 0 0 40px;
+        background: #f1fbff;
+      }
+    }
+  }
+}
+
+
+/* 2ndセクション */
+#second_section {
+  height: 100vh;
+  position: relative;
+  display: none;
+
+  .lucky_area {
+    width: 10%;
+    height: 100%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+
+    p {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .namelist_area {
+    width: 80%;
+    height: 100%;
+    left: 10%;
+    position: absolute;
+
+    .name_zone {
+      width: 80%;
+      height: 80%;
+      top: 10%;
+      left: 10%;
+      border-radius: 20px;
+      position: absolute;
+      overflow: scroll;
+      background-color: #CBF7FF;
+
+      #name_list {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 1%;
+
+        .nameEle {
+          margin: 3%;
+          padding: 7%;
+          background-color: #fff;
+          opacity: 80%;
+          cursor: pointer;
+          transition: 1s;
+        }
+
+        .nameEle:hover {
+          transform: scale(1.5);
+        }
+      }
+    }
+
+    .scroll_zone {
+      width: 15%;
+      height: 20%;
+      position: absolute;
+      right: 0;
+
+      .scrolldown {
+        position: absolute;
+        bottom: 1%;
+        right: 50%;
+        /*矢印の動き1秒かけて永遠にループ*/
+        animation: arrowmove 1s ease-in-out infinite;
+
+        /*Scrollテキストの描写*/
+        span {
+          /*描画位置*/
+          position: absolute;
+          left: -22px;
+          bottom: 5px;
+          /*縦書き設定*/
+          -ms-writing-mode: tb-rl;
+          -webkit-writing-mode: vertical-rl;
+          writing-mode: vertical-rl;
+        }
+
+        /* 矢印の描写 */
+        &:before {
+          content: "";
+          /*描画位置*/
+          position: absolute;
+          bottom: 0;
+          right: -6px;
+          /*矢印の形状*/
+          width: 1px;
+          height: 20px;
+          background: $text-color;
+          transform: skewX(-31deg);
+        }
+
+        &:after {
+          content: "";
+          /*描画位置*/
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          /*矢印の形状*/
+          width: 1px;
+          height: 50px;
+          background: $text-color;
+        }
+      }
+
+      /*下からの距離が変化して全体が下→上→下に動く*/
+      @keyframes arrowmove {
+        0% {
+          bottom: 1%;
+        }
+
+        50% {
+          bottom: 8%;
+        }
+
+        100% {
+          bottom: 1%;
+        }
+      }
+    }
+  }
+
+  .wave_area {
+    width: 10%;
+    height: 100%;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+}
+
+
+/* 3rdセクション */
+#third_section {
+  height: 100vh;
+  position: relative;
+  display: none;
+
+  .data_area {
+    width: 25%;
+    height: 100%;
+    left: 0%;
+    padding: 3%;
+    background-color: #CBF7FF;
+    overflow: scroll;
+    position: absolute;
+
+    .scroll {
+      overflow: scroll;
+
+      #furigana p {
+        background-color: #F1FBFF;
+        padding: 5px;
+        border-radius: 0 100px 100px 0;
+      }
+
+      #name {
+        font-size: 35px;
+        color: #CBF7FF;
+        -webkit-text-stroke: 1px #374955;
+        padding-top: 10px;
+        padding-bottom: 25px;
+      }
+
+      #gaiyou p {
+        background-color: #F1FBFF;
+        padding: 5px;
+        border-radius: 0 100px 100px 0;
+      }
+
+      #overview {
+        padding-top: 10px;
+      }
+
+      #hozen {
+        padding-top: 25px;
+
+        p {
+          background-color: #F1FBFF;
+          padding: 5px;
+          border-radius: 0 100px 100px 0;
+        }
+      }
+
+      #activity {
+        padding-top: 10px;
+      }
+    }
+  }
+
+  .head_area {
+    width: 75%;
+    height: 15%;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F1FBFF;
+    position: absolute;
+
+    #address {
+      left: 15%;
+      bottom: 0;
+      position: absolute;
+    }
+
+    .arrow_up {
+      height: 50%;
+      opacity: 1;
+      cursor: pointer;
+      transition: 1s;
+
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }
+
+  #map_area {
+    width: 75%;
+    height: 70%;
+    left: 25%;
+    top: 15%;
+    background-color: #F1FBFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    #map {
+      height: 90%;
+      width: 70%;
+    }
+  }
+
+  .footer_area {
+    width: 75%;
+    height: 15%;
+    left: 25%;
+    top: 85%;
+    background-color: #F1FBFF;
+    position: absolute;
+  }
+}
+
+// レスポンシブ
+@media screen and (max-width:960px) {
+
+  /* 960px以下 */
+  #first_section .top_bar {
+    width: 75vw;
+    height: 90vh;
+
+    .logo_area {
+      top: 5%;
+      left: 5%;
+    }
+
+    .text_area {
+      top: 35%;
+      width: 66%;
+    }
+  }
+
+  #first_section .bottom_bar {
+    width: 100vw;
+    height: 100vh;
+    top: 0%;
+
+    .selectbox {
+      width: initial;
+      top: 50%;
+      left: 10%;
+
+      select {
+        background: initial;
+      }
+    }
+  }
+
+  #second_section .lucky_area {
+    width: initial;
+  }
+
+  #second_section .wave_area {
+    right: 3%;
+  }
+
+  #third_section .head_area {
+    width: 100%;
+    left: initial;
+  }
+
+  #third_section #map_area {
+    width: 100%;
+    height: 35%;
+    left: initial;
+  }
+
+  #third_section .data_area {
+    width: 100%;
+    height: 50%;
+    top: 50%;
+    padding: 10%;
+  }
+
+  #third_section .footer_area {
+    display: none;
+  }
+}
