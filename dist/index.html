@@ -2,10 +2,10 @@
 <html lang="ja">
 
 <head>
-  <!-- Module -->
-  <script src="main.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- Module -->
+  <script src="main.js"></script>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,9 +53,31 @@
         <p>
           Pure Water, Clear Water<br>
           湧水は人々にとってうるおいとやすらぎの場を提供しています。<br>
-          以下から都道府県を選んで、とっておきの湧水と出会ってください。
+          都道府県を選んで、とっておきの名水と出会ってください。
         </p>
       </div>
+
+      <!-- QRコード -->
+      <div class="qr"></div>
+      <!-- ふにゃふにゃ -->
+      <svg id="visual" viewBox="0 0 700 600" width="100vw" height="100vh" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+        <!--グラデーション定義-->
+        <defs>
+          <linearGradient id="g">
+            <stop offset="0" stop-color="#f5f7fa" />
+            <stop offset="1" stop-color="#c3cfe2" />
+          </linearGradient>
+        </defs>
+        <g transform="translate(919.8749749657477 39.55433711424793)">
+          <path
+            d="M148.8 -168.2C208.1 -127.6 281.8 -95.2 291 -50.2C300.2 -5.3 244.9 52.1 198.2 97C151.5 141.9 113.4 174.3 73.8 178.1C34.1 181.9 -7 157 -70.2 151.8C-133.4 146.6 -218.7 161.1 -272.2 128.2C-325.8 95.3 -347.5 15.1 -319.5 -41.1C-291.4 -97.3 -213.5 -129.5 -152 -169.6C-90.4 -209.8 -45.2 -257.9 -0.2 -257.6C44.8 -257.4 89.6 -208.7 148.8 -168.2">
+          </path>
+        </g>
+        <text x="700" y="50" class="text">
+          スマートフォンはこちら
+        </text>
+      </svg>
     </div>
 
     <div class="bottom_bar">
