@@ -122,6 +122,25 @@ tspan {
     position: absolute;
   }
 
+  #visual {
+    fill: url(#g);
+
+    .text {
+      font-size: 10px;
+      fill: $text-color;
+    }
+  }
+
+  .qr {
+    background: url("qr.png");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: 5%;
+    background-position: 90% 25%;
+    position: absolute;
+  }
+
   .bottom_bar {
     width: 100%;
     height: 50vh;
@@ -445,7 +464,7 @@ tspan {
 
     .selectbox {
       width: initial;
-      top: 50%;
+      top: 55%;
       left: 10%;
 
       select {
