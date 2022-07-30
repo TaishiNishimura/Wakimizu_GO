@@ -1,3 +1,9 @@
+/* メイン実行
+| Author | Date |
+| ---- | ---- |
+| t-nishimura | 2022/07/31 |
+*/
+
 import { GetNameList } from './modules/getNameList.js';
 import { GetData } from './modules/getData.js';
 import { GetMap } from './modules/getMap.js';

@@ -1,5 +1,9 @@
 export class CommonSettings {
-  // 共通設定クラス
+  /* 共通設定クラス
+  | Author | Date |
+  | ---- | ---- |
+  | t-nishimura | 2022/07/31 |
+  */
   constructor() {
     this.WakimizuApiUrl = 'https://livlog.xyz/webapi/springWater?q=';
     this.OpenStreetMapUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';

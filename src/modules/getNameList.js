@@ -1,7 +1,11 @@
 import { CommonFunctions } from './commonFunctions.js';
 
 export class GetNameList extends CommonFunctions {
-  //湧水名一覧クラス
+  /* 湧水名一覧クラス
+  | Author | Date |
+  | ---- | ---- |
+  | t-nishimura | 2022/07/31 |
+  */
   constructor() {
     super();
     this.nameEle = 'nameEle';

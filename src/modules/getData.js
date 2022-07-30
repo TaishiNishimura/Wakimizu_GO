@@ -1,7 +1,11 @@
 import { CommonFunctions } from './commonFunctions.js';
 
 export class GetData extends CommonFunctions {
-  //湧水情報クラス
+  /* 湧水情報クラス
+  | Author | Date |
+  | ---- | ---- |
+  | t-nishimura | 2022/07/31 |
+  */
   constructor() {
     super();
     this.addressId = 'address';
