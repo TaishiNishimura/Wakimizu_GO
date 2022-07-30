@@ -1,7 +1,11 @@
 import { CommonSettings } from './commonSettings.js';
 
 export class CommonFunctions extends CommonSettings {
-  // 共通関数クラス
+  /* 共通関数クラス
+  | Author | Date |
+  | ---- | ---- |
+  | t-nishimura | 2022/07/31 |
+  */
   constructor() {
     super();
     this.maxNumber = 101;
