@@ -1,10 +1,10 @@
-# Wakimizu_GO
+# Wakimizu GO
 
-# Wakimizu_GO
+## Wakimizu GO
 
-# Wakimizu_GO
- 
-# DEMO
+### Wakimizu GO
+
+### https://wakimizu-go.com
  
 <img width="1506" alt="スクリーンショット 2022-07-31 0 23 59" src="https://user-images.githubusercontent.com/86339782/181923430-b3b2467e-2759-4f03-a93b-ebaa4ecb5672.png">
  
@@ -22,6 +22,10 @@ Install with npm:
 ```bash
 npm install -D webpack webpack-cli
 ```
+webpack-dev-server
+```bash
+npm i -D webpack webpack-cli webpack-dev-server
+```
 
 # Usage
  
@@ -32,9 +36,8 @@ build command
 ```bash
 npx webpack
 ```
-webpack-dev-server
+start webpack-dev-server
 ```bash
-npm i -D webpack webpack-cli webpack-dev-server
 npm run start
 ```
  
