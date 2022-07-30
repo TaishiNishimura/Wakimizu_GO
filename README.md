@@ -8,7 +8,6 @@
 
 ##### Wakimizu GO
 
-
 # Production URL
 ### https://wakimizu-go.com
  
@@ -26,12 +25,9 @@
 # Installation
 
 Install with npm:
+webpack関連モジュールとローカルサーバー起動のためのwebpack-dev-serverモジュール
 ```bash
-npm install -D webpack webpack-cli
-```
-webpack-dev-server
-```bash
-npm install webpack-dev-server --save-dev
+npm i -D webpack webpack-cli webpack-dev-server
 ```
 
 # Usage
