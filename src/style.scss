@@ -1,8 +1,12 @@
 @charset "utf-8";
 
+/* 変数宣言 */
 $font: 'Zen Maru Gothic', sans-serif;
 $text-color: #374955;
+$blue: #CBF7FF;
 $light-blue: #EBFCFF;
+$ex-light-blue: #F1FBFF;
+/* ここまで */
 
 * {
   margin: 0;
@@ -26,33 +30,30 @@ tspan {
 #loading {
   width: 100vw;
   height: 100vh;
-  background-color: #fff;
+  background-color: white;
   position: fixed;
   z-index: 9999;
 
   .spinner {
-    /*波紋の基点とするためrelativeを指定*/
     position: relative;
     top: 40%;
     left: 45%;
 
-    /*波形の設定*/
+    /* 波形の設定 */
     &:before {
       content: '';
-      /*絶対配置で波形の位置を決める*/
       position: absolute;
-      /*波形の形状*/
+      /* 波形の形状 */
       border: 2px solid $text-color;
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      /*はじめは不透明*/
       opacity: 1;
-      /*アニメーションの設定*/
+      /* アニメーションの設定 */
       animation: 1s circleanime forwards;
     }
 
-    /*波形が広がるアニメーション*/
+    /* 波形が広がるアニメーション */
     @keyframes circleanime {
       0% {
         transform: scale(0);
@@ -85,10 +86,10 @@ tspan {
   position: relative;
 
   .top_bar {
-    width: 100%;
+    width: 100vw;
     height: 50vh;
     top: 0;
-    background-color: #fff;
+    background-color: white;
     z-index: 1;
     position: absolute;
 
@@ -165,8 +166,8 @@ tspan {
         position: absolute;
         right: 5%;
         top: 43%;
-        border-bottom: #333 2px solid;
-        border-right: #333 2px solid;
+        border-bottom: $text-color 2px solid;
+        border-right: $text-color 2px solid;
         transform: rotate(45deg)translateY(-30%);
       }
 
@@ -178,9 +179,8 @@ tspan {
         box-sizing: border-box;
         font-size: 22px;
         font-weight: 300;
-        border: #ccc 1px solid;
         border-radius: 40px 0 0 40px;
-        background: #f1fbff;
+        background: white;
       }
     }
   }
@@ -220,7 +220,7 @@ tspan {
       border-radius: 20px;
       position: absolute;
       overflow: scroll;
-      background-color: #CBF7FF;
+      background-color: $blue;
 
       #name_list {
         display: -webkit-flex;
@@ -234,10 +234,19 @@ tspan {
         .nameEle {
           margin: 3%;
           padding: 7%;
-          background-color: #fff;
-          opacity: 80%;
+          background-color: white;
           cursor: pointer;
           transition: 1s;
+          opacity: 0;
+          /* アニメーションの設定 */
+          animation: 2s name-list forwards;
+        }
+
+        /* 名前一覧をゆっくり表示 */
+        @keyframes name-list {
+          100% {
+            opacity: 1;
+          }
         }
 
         .nameEle:hover {
@@ -298,7 +307,7 @@ tspan {
         }
       }
 
-      /*下からの距離が変化して全体が下→上→下に動く*/
+      /* 下からの距離が変化して全体が下→上→下に動く */
       @keyframes arrowmove {
         0% {
           bottom: 1%;
@@ -338,7 +347,7 @@ tspan {
     height: 100%;
     left: 0%;
     padding: 3%;
-    background-color: #CBF7FF;
+    background-color: $blue;
     overflow: scroll;
     position: absolute;
 
@@ -346,21 +355,21 @@ tspan {
       overflow: scroll;
 
       #furigana p {
-        background-color: #F1FBFF;
+        background-color: $ex-light-blue;
         padding: 5px;
         border-radius: 0 100px 100px 0;
       }
 
       #name {
         font-size: 35px;
-        color: #CBF7FF;
-        -webkit-text-stroke: 1px #374955;
+        color: $blue;
+        -webkit-text-stroke: 1px $text-color;
         padding-top: 10px;
         padding-bottom: 25px;
       }
 
       #gaiyou p {
-        background-color: #F1FBFF;
+        background-color: $ex-light-blue;
         padding: 5px;
         border-radius: 0 100px 100px 0;
       }
@@ -373,7 +382,7 @@ tspan {
         padding-top: 25px;
 
         p {
-          background-color: #F1FBFF;
+          background-color: $ex-light-blue;
           padding: 5px;
           border-radius: 0 100px 100px 0;
         }
@@ -485,10 +494,6 @@ tspan {
       width: initial;
       top: 55%;
       left: 10%;
-
-      select {
-        background: initial;
-      }
     }
   }
 

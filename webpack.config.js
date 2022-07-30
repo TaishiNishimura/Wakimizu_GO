@@ -1,4 +1,4 @@
-// [定数] webpack の出力オプションを指定します
+// [定数] webpack の出力オプションを指定
 // 'production' か 'development' を指定
 const MODE = "production";
 
