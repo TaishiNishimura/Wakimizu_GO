@@ -1,10 +1,13 @@
 import { CommonFunctions } from './commonFunctions.js';
 
 export class GetMap extends CommonFunctions {
-  //マップを描画するクラス
+  /* マップ描画クラス
+  | Author | Date |
+  | ---- | ---- |
+  | t-nishimura | 2022/07/31 |
+  */
   constructor() {
     super();
-    //////// let ////////
     this.doubleOkMark = '◎';
     this.doubleOk = '立入OK';
     this.singleOkMark = '○';
