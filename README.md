@@ -3,11 +3,6 @@
 # Wakimizu_GO
 
 # Wakimizu_GO
-
-# Wakimizu_GO
-
-# Wakimizu_GO
- 
  
 # DEMO
  
@@ -15,7 +10,7 @@
  
 # Features
  
-オープンに提供されている「湧き水検索API」(https://springwaterapi.docs.apiary.io)を使用して、全国の湧水情報を絞り込んで表示する検索サイトを制作しました。シングルページで完結するように設計し、async/awaitを用いた非同期処理や、webpackでモジュールのバンドルを行うなど、モダンJSの一端を学ぶ機会としました。
+オープンに提供されている「湧き水検索API」 (https://springwaterapi.docs.apiary.io) を使用して、全国の湧水情報を絞り込んで表示する検索サイトを制作しました。シングルページで完結するように設計し、async/awaitを用いた非同期処理や、webpackでモジュールのバンドルを行うなど、モダンJSの一端を学ぶ機会としました。
  
 # Requirement
 
@@ -29,8 +24,6 @@ npm install -D webpack webpack-cli
 ```
 
 # Usage
- 
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
  
 ```bash
 git clone https://github.com/TaishiNishimura/Wakimizu_GO.git
