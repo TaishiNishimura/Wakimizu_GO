@@ -4,10 +4,10 @@ export class CommonFunctions extends CommonSettings {
   // 共通関数クラス
   constructor() {
     super();
-    //////// Constant ////////
-    this.MaxNumber = 101;
-    this.MinNumber = 30;
-    this.CalculationNumber = 1
+    this.maxNumber = 101;
+    this.minNumber = 30;
+    this.calculationNumber = 1
+    this.noname = "名無の湧水";
   }
 
   //////// Methods ////////
@@ -15,21 +15,30 @@ export class CommonFunctions extends CommonSettings {
   // APIコール
   async callApi(prefecture) {
     const res = await fetch(this.WakimizuApiUrl + prefecture);
-      let wakimizuObj = await res.json();
-      return wakimizuObj;
+    let wakimizuObj = await res.json();
+    return wakimizuObj;
   }
 
   // 30〜100の乱数を返す
   getRandom() {
     let random = Math.floor(
-      Math.random() * (this.MaxNumber + this.CalculationNumber - this.MinNumber)
-    ) + this.MinNumber;
+      Math.random() * (this.maxNumber + this.calculationNumber - this.minNumber)
+    ) + this.minNumber;
     return random;
+  }
+
+  // 名前がnullの場合、「名無の湧水」という名前を付与
+  nameCheck(name) {
+    if (name === null) {
+      name = this.noname
+      return name
+    }
+    return name
   }
 
   // 半角スペースを改行タグに置換
   getBr(str) {
-    let strBr = str.replace(/\s/g,'</br>');
+    let strBr = str.replace(/\s/g, this.break);
     return strBr
   }
 
@@ -37,7 +46,7 @@ export class CommonFunctions extends CommonSettings {
   removeElement(idName) {
     let elem = document.getElementById(idName);
     if (elem.hasChildNodes()) {
-      while(elem.firstChild){
+      while (elem.firstChild) {
         elem.removeChild(elem.firstChild);
       }
     }

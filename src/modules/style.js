@@ -1,6 +1,6 @@
 export class Style {
-  // 見た目を制御するクラス
-
+  // 動きの変化を制御するクラス
+  
   // ローディング画面
   loadAnime() {
     const spinner = document.getElementById('loading');
