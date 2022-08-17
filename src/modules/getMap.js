@@ -1,11 +1,14 @@
+/* マップ描画クラス
+| Author | Date |
+| ---- | ---- |
+| t-nishimura | 2022/07/31 |
+*/
+
+//////// import ////////
 import { CommonFunctions } from './commonFunctions.js';
 
+//////// class ////////
 export class GetMap extends CommonFunctions {
-  /* マップ描画クラス
-  | Author | Date |
-  | ---- | ---- |
-  | t-nishimura | 2022/07/31 |
-  */
   constructor() {
     super();
     this.doubleOkMark = '◎';
