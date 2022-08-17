@@ -1,11 +1,14 @@
+/* 湧水情報クラス
+| Author | Date |
+| ---- | ---- |
+| t-nishimura | 2022/07/31 |
+*/
+
+//////// import ////////
 import { CommonFunctions } from './commonFunctions.js';
 
+//////// class ////////
 export class GetData extends CommonFunctions {
-  /* 湧水情報クラス
-  | Author | Date |
-  | ---- | ---- |
-  | t-nishimura | 2022/07/31 |
-  */
   constructor() {
     super();
     this.addressId = 'address';

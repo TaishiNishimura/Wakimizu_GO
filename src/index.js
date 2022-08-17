@@ -4,18 +4,20 @@
 | t-nishimura | 2022/07/31 |
 */
 
+//////// import ////////
 import { GetNameList } from './modules/getNameList.js';
 import { GetData } from './modules/getData.js';
 import { GetMap } from './modules/getMap.js';
 import { Style } from './modules/style.js';
 import "./style.scss";
 
-// インスタンス化
+//////// instance ////////
 const getNL = new GetNameList();
 const getD = new GetData();
 const getM = new GetMap();
 const style = new Style();
 
+//////// execution ////////
 // 処理開始
 window.onload = function () {
   // ローディング画面
