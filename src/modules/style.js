@@ -1,9 +1,13 @@
+/* 動きの変化を制御するクラス
+| Author | Date |
+| ---- | ---- |
+| t-nishimura | 2022/07/31 |
+*/
+
+//////// class ////////
 export class Style {
-  /* 動きの変化を制御するクラス
-  | Author | Date |
-  | ---- | ---- |
-  | t-nishimura | 2022/07/31 |
-  */
+
+  //////// Methods ///////
 
   // ローディング画面
   loadAnime() {
