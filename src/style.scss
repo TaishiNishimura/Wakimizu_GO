@@ -131,7 +131,7 @@ tspan {
       position: absolute;
       width: 120px;
       height: 110px;
-      top: 5%;
+      top: 2%;
       right: 10%;
       .sp_navi {
         position: absolute;
@@ -151,8 +151,8 @@ tspan {
       }
     }
     .blob-box {
-      width: 50%;
-      height: 100%;
+      width: 700px;
+      height: auto;
       right: 0;
       top: 0;
       position: absolute;
@@ -473,7 +473,10 @@ tspan {
 
       .text_area {
         top: 55%;
-        left: 5%;
+        left: 7%;
+        right: 7%;
+        margin: auto;
+        font-size: 12px;
       }
 
       .qr-code {
@@ -494,11 +497,12 @@ tspan {
      .selectbox {
         width: initial;
         top: 70%;
-        left: 15%;
+        left: 5%;
         right: 30%;
         margin: auto;
         select {
           font-size: 18px;
+          border-radius: initial;
         }
       }
     }
