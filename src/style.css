@@ -1,0 +1,501 @@
+@charset "UTF-8";
+/* 変数宣言 */
+/* ここまで */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+
+p,
+select,
+span,
+tspan {
+  color: #374955;
+}
+
+/* ローディング画面 */
+#loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  z-index: 9999;
+}
+#loading .spinner {
+  position: relative;
+  top: 40%;
+  left: 45%;
+  /* 波形の設定 */
+  /* 波形が広がるアニメーション */
+}
+#loading .spinner:before {
+  content: "";
+  position: absolute;
+  /* 波形の形状 */
+  border: 2px solid #374955;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  opacity: 1;
+  /* アニメーションの設定 */
+  -webkit-animation: 1s circleanime forwards;
+          animation: 1s circleanime forwards;
+}
+@-webkit-keyframes circleanime {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+@keyframes circleanime {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.loaded {
+  opacity: 1;
+  -webkit-animation: 1s circleanime2 forwards;
+          animation: 1s circleanime2 forwards;
+}
+
+@-webkit-keyframes circleanime2 {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes circleanime2 {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+/* 1stセクション */
+#first_section {
+  height: 100vh;
+  position: relative;
+}
+#first_section .top_bar {
+  width: 100vw;
+  height: 50vh;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+  position: absolute;
+}
+#first_section .top_bar .logo_area {
+  top: 10%;
+  left: 3%;
+  position: absolute;
+}
+#first_section .top_bar .logo_area .logo_a {
+  fill: #374955;
+  font-size: 40px;
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+#first_section .top_bar .logo_area .logo_b {
+  fill: #374955;
+  font-size: 40px;
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+#first_section .top_bar .logo_area .logo_c {
+  fill: none;
+  stroke: #374955;
+  stroke-width: 2px;
+}
+#first_section .top_bar .text_area {
+  top: 60%;
+  left: 15%;
+  position: absolute;
+}
+#first_section .top_bar #visual {
+  fill: url(#g);
+}
+#first_section .top_bar .qr-code {
+  z-index: 1;
+  position: absolute;
+  width: 120px;
+  height: 110px;
+  top: 2%;
+  right: 10%;
+}
+#first_section .top_bar .qr-code .sp_navi {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+#first_section .top_bar .qr-code .qr {
+  background: url("qr.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: 77px;
+  background-position: 50% 100%;
+  position: absolute;
+}
+#first_section .top_bar .blob-box {
+  width: 700px;
+  height: auto;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+#first_section .bottom_bar {
+  width: 100%;
+  height: 50vh;
+  top: 50%;
+  background: url("waterImage.jpg");
+  position: absolute;
+}
+#first_section .bottom_bar .selectbox {
+  width: 35%;
+  top: 10%;
+  left: 55%;
+  z-index: 1;
+  position: absolute;
+}
+#first_section .bottom_bar .selectbox:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: 5%;
+  top: 43%;
+  border-bottom: #374955 2px solid;
+  border-right: #374955 2px solid;
+  transform: rotate(45deg) translateY(-30%);
+}
+#first_section .bottom_bar .selectbox select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  padding: 1em 1em;
+  box-sizing: border-box;
+  font-size: 22px;
+  font-weight: 300;
+  border-radius: 40px 0 0 40px;
+  background: white;
+}
+
+/* 2ndセクション */
+#second_section {
+  height: 100vh;
+  position: relative;
+  display: none;
+}
+#second_section .lucky_area {
+  width: 10%;
+  height: 100%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+#second_section .lucky_area p {
+  transform: rotate(-90deg);
+}
+#second_section .namelist_area {
+  width: 80%;
+  height: 100%;
+  left: 10%;
+  position: absolute;
+}
+#second_section .namelist_area .name_zone {
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  border-radius: 20px;
+  position: absolute;
+  overflow: scroll;
+  background-color: #CBF7FF;
+}
+#second_section .namelist_area .name_zone #name_list {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1%;
+  /* 名前一覧をゆっくり表示 */
+}
+#second_section .namelist_area .name_zone #name_list .nameEle {
+  margin: 3%;
+  padding: 7%;
+  background-color: white;
+  cursor: pointer;
+  transition: 1s;
+  opacity: 0;
+  /* アニメーションの設定 */
+  -webkit-animation: 2s name-list forwards;
+          animation: 2s name-list forwards;
+}
+@-webkit-keyframes name-list {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes name-list {
+  100% {
+    opacity: 1;
+  }
+}
+#second_section .namelist_area .name_zone #name_list .nameEle:hover {
+  transform: scale(1.5);
+}
+#second_section .namelist_area .scroll_zone {
+  width: 15%;
+  height: 20%;
+  position: absolute;
+  right: 0;
+  /* 下からの距離が変化して全体が下→上→下に動く */
+}
+#second_section .namelist_area .scroll_zone .scrolldown {
+  position: absolute;
+  bottom: 1%;
+  right: 50%;
+  /*矢印の動き1秒かけて永遠にループ*/
+  -webkit-animation: arrowmove 1s ease-in-out infinite;
+          animation: arrowmove 1s ease-in-out infinite;
+  /*Scrollテキストの描写*/
+  /* 矢印の描写 */
+}
+#second_section .namelist_area .scroll_zone .scrolldown span {
+  /*描画位置*/
+  position: absolute;
+  left: -22px;
+  bottom: 5px;
+  /*縦書き設定*/
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+#second_section .namelist_area .scroll_zone .scrolldown:before {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  right: -6px;
+  /*矢印の形状*/
+  width: 1px;
+  height: 20px;
+  background: #374955;
+  transform: skewX(-31deg);
+}
+#second_section .namelist_area .scroll_zone .scrolldown:after {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /*矢印の形状*/
+  width: 1px;
+  height: 50px;
+  background: #374955;
+}
+@-webkit-keyframes arrowmove {
+  0% {
+    bottom: 1%;
+  }
+  50% {
+    bottom: 8%;
+  }
+  100% {
+    bottom: 1%;
+  }
+}
+@keyframes arrowmove {
+  0% {
+    bottom: 1%;
+  }
+  50% {
+    bottom: 8%;
+  }
+  100% {
+    bottom: 1%;
+  }
+}
+
+/* 3rdセクション */
+#third_section {
+  height: 100vh;
+  position: relative;
+  display: none;
+}
+#third_section .data_area {
+  width: 25%;
+  height: 100%;
+  left: 0%;
+  padding: 3%;
+  background-color: #CBF7FF;
+  overflow: scroll;
+  position: absolute;
+}
+#third_section .data_area .scroll {
+  overflow: scroll;
+}
+#third_section .data_area .scroll #furigana p {
+  background-color: #F1FBFF;
+  padding: 5px;
+  border-radius: 0 100px 100px 0;
+}
+#third_section .data_area .scroll #name {
+  font-size: 35px;
+  color: #CBF7FF;
+  -webkit-text-stroke: 1px #374955;
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+#third_section .data_area .scroll #gaiyou p {
+  background-color: #F1FBFF;
+  padding: 5px;
+  border-radius: 0 100px 100px 0;
+}
+#third_section .data_area .scroll #overview {
+  padding-top: 10px;
+}
+#third_section .data_area .scroll #hozen {
+  padding-top: 25px;
+}
+#third_section .data_area .scroll #hozen p {
+  background-color: #F1FBFF;
+  padding: 5px;
+  border-radius: 0 100px 100px 0;
+}
+#third_section .data_area .scroll #activity {
+  padding-top: 10px;
+}
+#third_section .head_area {
+  width: 75%;
+  height: 15%;
+  left: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EBFCFF;
+  position: absolute;
+}
+#third_section .head_area #address {
+  left: 15%;
+  bottom: 0;
+  position: absolute;
+}
+#third_section .head_area .arrow_up {
+  height: 50%;
+  opacity: 1;
+  cursor: pointer;
+  transition: 1s;
+}
+#third_section .head_area .arrow_up:hover {
+  transform: scale(1.5);
+}
+#third_section #map_area {
+  width: 75%;
+  height: 70%;
+  left: 25%;
+  top: 15%;
+  background-color: #EBFCFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+#third_section #map_area #map {
+  height: 90%;
+  width: 70%;
+}
+#third_section .footer_area {
+  width: 75%;
+  height: 15%;
+  left: 25%;
+  top: 85%;
+  background-color: #EBFCFF;
+  position: absolute;
+}
+
+@media screen and (max-width: 1024px) {
+  #loading .spinner {
+    top: 35%;
+    left: 35%;
+  }
+  #first_section .top_bar {
+    width: 75vw;
+    height: 90vh;
+  }
+  #first_section .top_bar .logo_area {
+    top: 5%;
+    left: 5%;
+  }
+  #first_section .top_bar .text_area {
+    top: 55%;
+    left: 7%;
+    right: 7%;
+    margin: auto;
+    font-size: 12px;
+  }
+  #first_section .top_bar .qr-code {
+    display: none;
+  }
+  #first_section .top_bar .blob-box {
+    display: none;
+  }
+  #first_section .top_bar #visual {
+    display: none;
+  }
+  #first_section .bottom_bar {
+    width: 100vw;
+    height: 100vh;
+    top: 0%;
+  }
+  #first_section .bottom_bar .selectbox {
+    width: initial;
+    top: 70%;
+    left: 5%;
+    right: 30%;
+    margin: auto;
+  }
+  #first_section .bottom_bar .selectbox select {
+    font-size: 18px;
+    border-radius: initial;
+  }
+  #second_section .lucky_area {
+    width: initial;
+  }
+  #second_section .wave_area {
+    right: 3%;
+  }
+  #third_section .head_area {
+    width: 100%;
+    left: initial;
+  }
+  #third_section #map_area {
+    width: 100%;
+    height: 35%;
+    left: initial;
+  }
+  #third_section .data_area {
+    width: 100%;
+    height: 50%;
+    top: 50%;
+    padding: 10%;
+  }
+  #third_section .footer_area {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
